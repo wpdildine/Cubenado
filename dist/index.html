@@ -14,10 +14,20 @@
 <label for="nav-trigger"></label>
 
 <div class="range-container">
-  <h1>Control Panel</h1>
+  <h2 style="text-align: center;">Control Panel</h2>
   <hr>
   <div class="sub-container">
     <div class="fLabel">FPS: </div><div id="fps"></div>
+    <div class="fLabel">Vertices: 240000</div>
+  </div>
+  <div class="sub-container">
+    <h3 style="text-align:center;">Compute</h3>
+    <label for="cColor">Color</label>
+    <input type="checkbox" id="cColor"  />
+    <label for="cTexture">Texture</label>
+    <input type="checkbox" id="cTexture" />
+    <label for="cRotation">Rotation</label>
+    <input type="checkbox" id="cRotation" />
   </div>
   <div class="sub-container">
     <input id="materialSwap" type="button" value="Swap Shader" onClick="changeMaterial();">
@@ -48,7 +58,7 @@
   </div>
 </div>
 
-<script src="http://www.babylonjs.com/babylon.js"></script>
+<script src="scripts/vendor/babylon.js"></script>
 <script src="scripts/main.js"></script>
 </body>
 </html>

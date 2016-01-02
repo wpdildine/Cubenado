@@ -32,6 +32,9 @@ gulp.task('serve', function() {
 gulp.task('assets', function() {
 	return gulp.src('app/assets/**/*').pipe(gulp.dest('dist/assets/'));
 });
+gulp.task('copy', function() {
+  return gulp.src('app/scripts/vendor/**/*').pipe(gulp.dest('dist/scripts/vendor'));
+});
 
 gulp.task('clean', require('del').bind(null, ['dist']));
 
@@ -46,7 +49,8 @@ gulp.task('dist', ['clean'], function() {
 	                  .pipe(useref())
 	                  .pipe(gulp.dest('dist'));
 
-	var stream2 = gulp.src('app/assets/**/*').pipe(gulp.dest('dist/assets/'));
+	var stream2 = gulp.src('app/assets/**/*').pipe(gulp.dest('dist/assets'));
+  var stream3 = gulp.src('app/scripts/vendor/**/*').pipe(gulp.dest('dist/scripts/vendor'));
 
-	return merge(stream1, stream2);
+	return merge(stream1, stream2, stream3);
 });
