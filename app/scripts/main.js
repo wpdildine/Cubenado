@@ -144,7 +144,7 @@ var createScene = function () {
 
   var speed = 1.5;
 
-  /****** Freezes Normals for Performance *************************/
+  /************* Freezes Normals for Performance ******************/
 
   SPS.mesh.freezeNormals();
 
@@ -152,7 +152,11 @@ var createScene = function () {
 
   SPS.initParticles = function () {
     for (var p = 0; p < this.nbParticles; p++) {
+      this.particles[p].color.r = Math.random() * 0.6 + 0.5;
+      this.particles[p].color.g = Math.random() * 0.6 + 0.5;
+      this.particles[p].color.b = Math.random() * 0.6 + 0.5;
       this.recycleParticle(this.particles[p]);
+
     }
   };
   SPS.vars.scale = 0;
@@ -189,9 +193,7 @@ var createScene = function () {
       particle.rotation.x = Math.seededRandom() * 3.5;
       particle.rotation.y = Math.seededRandom() * 3.5;
       particle.rotation.z = Math.seededRandom() * 3.5;
-      particle.color.r = Math.random() * 0.6 + 0.5;
-      particle.color.g = Math.random() * 0.6 + 0.5;
-      particle.color.b = Math.random() * 0.6 + 0.5;
+
     }
 
   };
