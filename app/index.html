@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Cubenado</title>
+  <!-- build:css css/style.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- endbuild -->
+
+</head>
+
+<body>
+<canvas id="render"></canvas>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+<label for="nav-trigger"></label>
+
+<div class="range-container">
+  <h1>Control Panel</h1>
+  <hr>
+  <div class="sub-container">
+    <div class="fLabel">FPS: </div><div id="fps"></div>
+  </div>
+  <div class="sub-container">
+    <input id="materialSwap" type="button" value="Swap Shader" onClick="changeMaterial();">
+  </div>
+  <div class="sub-container">
+    <label for="nbParticles">Particles: <p id="labelParticles">10</p></label>
+    <input id="nbParticles" type="range" min="10" max="10000" value="10" step="1">
+  </div>
+  <div class="sub-container">
+    <label for="randomRotation">Rotation Seed: <p id="seedRotation">1</p></label>
+    <input id="randomRotation" type="range" min="1" max="500" value="1" step="1">
+  </div>
+  <div class="sub-container">
+    <label for="gravitySlide">Gravity: <p id="gravityVal">0</p></label>
+    <input id="gravitySlide" type="range" min="-10" max="10" value="0" step="1">
+  </div>
+  <div class="sub-container">
+    <label for="speedSlide">Y velocity: <p id="speedVal">2</p></label>
+    <input id="speedSlide" type="range" min="0" max="15" value="0" step="1">
+  </div>
+  <div class="sub-container">
+    <label for="scaleSlide">Cube Scale: <p id="scaleVal">2</p></label>
+    <input id="scaleSlide" type="range" min="0" max="15" value="0" step="1">
+  </div>
+  <div class="sub-container">
+    <label for="vortexSlide">Vortex Speed <p id="vortexVal">1</p></label>
+    <input id="vortexSlide" type="range" min="0" max="15" value="0" step="1">
+  </div>
+</div>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+<script src="http://www.babylonjs.com/babylon.js"></script>
+<!-- build:js scripts/main.js -->
+<script src="scripts/ui.js"></script>
+<script src="scripts/main.js"></script>
+
+<!-- endbuild -->
+</body>
+</html>
