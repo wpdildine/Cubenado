@@ -143,7 +143,10 @@ var createScene = function () {
   /*************************** Behavior ***************************/
 
   var speed = 1.5;
-  var gravity = 0.00;
+
+  /****** Freezes Normals for Performance *************************/
+
+  SPS.mesh.freezeNormals();
 
   /************************* Initialize ***************************/
 
@@ -193,7 +196,6 @@ var createScene = function () {
 
   };
 
-
   /*************************** Behavior ***************************/
 
   SPS.updateParticle = function (particle) {
@@ -205,7 +207,6 @@ var createScene = function () {
     (particle.position).addInPlace(particle.velocity);
     particle.position.y += speedValue / 4;
 
-
     var spin = (particle.idx % 2 == 0) ? 1 : -1;
     particle.rotation.z += 0.1 * spin;
     particle.rotation.x += 0.05 * spin;
@@ -215,7 +216,6 @@ var createScene = function () {
   /************************* Render ***************************/
 
   SPS.initParticles();
-
 
   /************* Execute Prior to Render **********************/
 
