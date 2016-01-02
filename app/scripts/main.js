@@ -218,7 +218,7 @@ var createScene = function () {
 
   /******************** Settings Adjustment *******************/
 
-  SPS.computeParticleColor = false;
+  SPS.computeParticleColor = true;
   SPS.computeParticleTexture = false;
   SPS.computeParticleRotation = false;
 
