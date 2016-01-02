@@ -216,11 +216,6 @@ var createScene = function () {
 
   SPS.initParticles();
 
-  /******************** Settings Adjustment *******************/
-
-  SPS.computeParticleColor = true;
-  SPS.computeParticleTexture = false;
-  SPS.computeParticleRotation = false;
 
   /************* Execute Prior to Render **********************/
 
@@ -228,6 +223,9 @@ var createScene = function () {
     SPS.setParticles();
     SPS.mesh.rotation.y += vortexValue * .025;
     shaderMaterial.setVector3("lightPosition", pointLight.position);
+    SPS.computeParticleColor = calcColor;
+    SPS.computeParticleTexture = calcTexture;
+    SPS.computeParticleRotation = calcRotation;
   });
 
   return scene;
