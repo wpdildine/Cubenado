@@ -36,50 +36,40 @@ function particleRange() {
 }
 particleRange();
 
-particleRangeSlider.addEventListener('change', function (evt) {
-  particleCount = parseInt(document.getElementById('nbParticles').value);
-});
+function rangeSliders() {
 
-function randomizeRotationRange() {
+  particleRangeSlider.addEventListener('change', function (evt) {
+    particleCount = parseInt(document.getElementById('nbParticles').value);
+  });
+
   rotationSlider.addEventListener('change', function (evt) {
     rotationSeedValue = parseInt(document.getElementById('randomRotation').value);
     document.getElementById('seedRotation').innerHTML = rotationSeedValue;
     Math.seed = rotationSeedValue;
   });
-}
-randomizeRotationRange();
 
-function gravityRange() {
   gravitySlider.addEventListener('change', function (evt) {
     gravityValue = parseInt(document.getElementById('gravitySlide').value);
     document.getElementById('gravityVal').innerHTML = gravityValue;
   });
-}
-gravityRange();
 
-function speedRange() {
   speedSlider.addEventListener('change', function (evt) {
     speedValue = parseInt(document.getElementById('speedSlide').value);
     document.getElementById('speedVal').innerHTML = speedValue;
   });
-}
-speedRange();
 
-function scaleRange() {
   scaleSlider.addEventListener('change', function (evt) {
     scaleValue = parseInt(document.getElementById('scaleSlide').value);
     document.getElementById('scaleVal').innerHTML = scaleValue;
   });
-}
-scaleRange();
 
-function vortexRange() {
+
   vortexSlider.addEventListener('change', function (evt) {
     vortexValue = parseInt(document.getElementById('vortexSlide').value);
     document.getElementById('vortexVal').innerHTML = vortexValue;
   });
 }
-vortexRange();
+rangeSliders();
 
 function calcCheck() {
   cColor.addEventListener('change', function (evt) {
@@ -135,6 +125,7 @@ Math.seededRandom = function (max, min) {
 };
 
 /*************************** FPS ***************************/
+
 var fps = {
   startTime: 0,
   frameNumber: 0,
