@@ -118,7 +118,7 @@ var createScene = function () {
       uniforms: ["world", "worldView", "worldViewProjection", "view", "projection"]
     });
 
-  shaderMaterial.setColor3("rgb", .3, .3, .3);
+  shaderMaterial.setColor3("rgb", 0.3, 0.3, 0.3);
   shaderMaterial.setFloat("time", 0);
   shaderMaterial.setVector3("cameraPosition", BABYLON.Vector3.Zero());
   shaderMaterial.backFaceCulling = false;
@@ -205,7 +205,7 @@ var createScene = function () {
       this.recycleParticle(particle);
     }
 
-    particle.velocity.y += (gravityValue * .01);
+    particle.velocity.y += (gravityValue * 0.01);
     (particle.position).addInPlace(particle.velocity);
     particle.position.y += speedValue / 4;
 
@@ -223,7 +223,7 @@ var createScene = function () {
 
   scene.registerBeforeRender(function () {
     SPS.setParticles();
-    SPS.mesh.rotation.y += vortexValue * .025;
+    SPS.mesh.rotation.y += vortexValue * 0.025;
     shaderMaterial.setVector3("lightPosition", pointLight.position);
     SPS.computeParticleColor = calcColor;
     SPS.computeParticleTexture = calcTexture;
