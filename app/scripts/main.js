@@ -146,7 +146,7 @@ var createScene = function () {
 
   /************* Freezes Normals for Performance ******************/
 
-  SPS.mesh.freezeNormals();
+  //SPS.mesh.freezeNormals();
 
   /************************* Initialize ***************************/
 
